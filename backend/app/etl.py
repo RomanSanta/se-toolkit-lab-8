@@ -167,12 +167,20 @@ async def load_logs(
         if existing:
             continue
 
+        # Use API score if available; otherwise compute from passed/total
+        score = log.get("score")
+        if score is None:
+            passed = log.get("passed")
+            total = log.get("total")
+            if passed is not None and total and total > 0:
+                score = round((passed / total) * 100, 1)
+
         interaction = InteractionLog(
             external_id=log["id"],
             learner_id=learner.id,
             item_id=item.id,
             kind="attempt",
-            score=log.get("score"),
+            score=score,
             checks_passed=log.get("passed"),
             checks_total=log.get("total"),
             created_at=datetime.fromisoformat(log["submitted_at"]),
