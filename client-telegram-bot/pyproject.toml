@@ -1,5 +1,5 @@
 [project]
-name = "lms-bot"
+name = "lms-client-telegram-bot"
 version = "0.1.0"
 description = "LMS Telegram Bot"
 requires-python = "==3.14.2"
