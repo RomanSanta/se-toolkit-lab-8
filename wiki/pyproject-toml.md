@@ -31,7 +31,7 @@ It defines project metadata, dependencies, and tool settings in [`TOML`](./file-
 This project uses a [`uv` workspace](#tooluvworkspace) layout with a root `pyproject.toml` and multiple member packages:
 
 - [`pyproject.toml`](../pyproject.toml) (root) — configures the workspace, shared development tools, a [task runner](#toolpoetasks), and [static analysis](./quality-assurance.md#static-analysis) tools.
-- Member `pyproject.toml` files, such as [`backend/pyproject.toml`](./backend-pyproject-toml.md#what-is-backendpyprojecttoml), [`qwen-code-api/pyproject.toml`](../qwen-code-api/pyproject.toml), [`mcp/mcp-lms/pyproject.toml`](../mcp/mcp-lms/pyproject.toml), and [`mcp/mcp-obs/pyproject.toml`](../mcp/mcp-obs/pyproject.toml), define package metadata and runtime dependencies for their own workspace members.
+- Member `pyproject.toml` files, such as [`backend/pyproject.toml`](./backend-pyproject-toml.md#what-is-backendpyprojecttoml), [`qwen-code-api/pyproject.toml`](../qwen-code-api/pyproject.toml), [`mcp/mcp-lms/pyproject.toml`](../mcp/mcp-lms/pyproject.toml), define package metadata and runtime dependencies for their own workspace members.
 
 Docs:
 
