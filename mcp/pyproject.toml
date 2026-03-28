@@ -1,7 +1,7 @@
 [tool.uv.workspace]
 members = [
     "mcp-lms",
-    # "mcp-obs"
+    "mcp-obs"
 ]
 
 [dependency-groups]
@@ -20,11 +20,11 @@ cmd = "pyright"
 [tool.pyright]
 include = [
     "mcp-lms",
-    # "mcp-obs"
+    "mcp-obs"
 ]
 extraPaths = [
     "mcp-lms/src",
-    # "mcp-obs/src"
+    "mcp-obs/src"
 ]
 exclude = ["**/__pycache__", "**/.*", "**/node_modules", ".venv"]
 typeCheckingMode = "strict"
