@@ -1,7 +1,5 @@
 """Router for item endpoints — reference implementation."""
 
-import logging
-
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.exc import IntegrityError
 from sqlmodel.ext.asyncio.session import AsyncSession
@@ -11,23 +9,16 @@ from lms_backend.db.items import create_item, read_item, read_items, update_item
 from lms_backend.models.item import ItemCreate, ItemRecord, ItemUpdate
 
 router = APIRouter()
-logger = logging.getLogger(__name__)
 
 
 @router.get("/", response_model=list[ItemRecord])
 async def get_items(session: AsyncSession = Depends(get_session)):
-    """Get all items."""
-    try:
-        return await read_items(session)
-    except Exception as exc:
-        logger.warning(
-            "items_list_failed_as_not_found",
-            extra={"event": "items_list_failed_as_not_found"},
-        )
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Items not found",
-        ) from exc
+    """Get all items.
+
+    Do not mask backend/database failures as 404. Let real exceptions propagate
+    to the global exception handler so diagnostics keep the true root cause.
+    """
+    return await read_items(session)
 
 
 @router.get("/{item_id}", response_model=ItemRecord)
