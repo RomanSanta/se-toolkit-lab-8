@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "e5a4803f",
+      "name": "Any LMS backend errors in the ",
+      "enabled": true,
+      "schedule": {
+        "kind": "every",
+        "atMs": null,
+        "everyMs": 900000,
+        "expr": null,
+        "tz": null
+      },
+      "payload": {
+        "kind": "agent_turn",
+        "message": "Any LMS backend errors in the last 15 minutes? If errors exist, summarize the latest log and matching trace evidence briefly. If none, say the system looks healthy.",
+        "deliver": true,
+        "channel": "webchat",
+        "to": "4557effc-8094-4a41-a30c-b5c77a782087"
+      },
+      "state": {
+        "nextRunAtMs": 1774698151884,
+        "lastRunAtMs": null,
+        "lastStatus": null,
+        "lastError": null,
+        "runHistory": []
+      },
+      "createdAtMs": 1774697091810,
+      "updatedAtMs": 1774697091810,
+      "deleteAfterRun": false
+    },
+    {
+      "id": "8f56ab24",
+      "name": "Any LMS backend errors in the ",
+      "enabled": true,
+      "schedule": {
+        "kind": "every",
+        "atMs": null,
+        "everyMs": 900000,
+        "expr": null,
+        "tz": null
+      },
+      "payload": {
+        "kind": "agent_turn",
+        "message": "Any LMS backend errors in the last 15 minutes? If errors exist, summarize the latest log and matching trace evidence briefly. If none, say the system looks healthy.",
+        "deliver": true,
+        "channel": "webchat",
+        "to": "16b9ac7d-550f-4541-befb-6b09f43ce18c"
+      },
+      "state": {
+        "nextRunAtMs": 1774698176122,
+        "lastRunAtMs": null,
+        "lastStatus": null,
+        "lastError": null,
+        "runHistory": []
+      },
+      "createdAtMs": 1774697276122,
+      "updatedAtMs": 1774697276122,
+      "deleteAfterRun": false
+    }
+  ]
+}
